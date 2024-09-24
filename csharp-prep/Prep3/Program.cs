@@ -9,7 +9,18 @@ class Program
         int magicNumber = int.Parse(answer);
         Console.Write("What is your guess? ");
         string guess = Console.ReadLine();
-        int numberGuess = int.Parse(guess);
-        
+        int guessNumber = int.Parse(guess);
+        if (guessNumber > magicNumber)
+        {
+            Console.WriteLine("Lower! ");
+        }
+        else if (guessNumber < magicNumber)
+        {
+            Console.WriteLine("Higher! ");
+        }
+        else
+        {
+            Console.WriteLine("Spot on! You guessed it!");
+        }
     }
 }
