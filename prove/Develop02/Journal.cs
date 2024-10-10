@@ -4,14 +4,14 @@ public class Journal
 {
     List<Entry> _journal = new List<Entry>();
 
-    public voiod DisplayJournal()
+    public void DisplayJournal()
     {
         foreach (Entry entry in _journal)
         {
             entry.DisplayEntry();
         }
     }
-    
+
 
 
 }

@@ -42,7 +42,7 @@ class Program
         }
         else if (action == "2")
         {
-            myJournal.DisplayJournal()
+            myJournal.DisplayJournal();
         }
     }
 }
