@@ -4,15 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> prompts = new List<string>();
-        prompts.Add("Who was the most interesting person I interacted with today?");
-        prompts.Add("What was the best part of my day?");
-        prompts.Add("How did I see the hand of the Lord in my life today?");
-        prompts.Add("What was the strongest emotion I felt today?");
-        prompts.Add("If I had one thing I could do over today, what would it be?");
-        prompts.Add("Did I meet someone new?");
-        prompts.Add("How did I serve today?");
-        prompts.Add("What was the hardest part of today?");
+        List<string> prompts = new List<string>{"Who was the most interesting person I interacted with today?", 
+        "What was the best part of my day?", "How did I see the hand of the Lord in my life today?", 
+        "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?",
+        "Did I meet someone new?", "How did I serve today?", "What was the hardest part of today?"};
 
         static string DisplayScreen()
         {
@@ -26,8 +21,10 @@ class Program
             string screen = Console.ReadLine();
             return screen;
         }
-        string action = DisplayScreen();
+
         Journal myJournal = new Journal();
+
+        string action = DisplayScreen();
 
         while (action != "6")
         {    if (action == "1")
@@ -51,6 +48,26 @@ class Program
             else if (action == "2")
             {
                 myJournal.DisplayJournal();
+                action = DisplayScreen();
+            }
+            else if (action == "3")
+            {
+                myJournal.SaveJournal();
+                action = DisplayScreen();
+            }
+            else if (action == "4")
+            {
+                myJournal.UploadJournal();
+                myJournal.DisplayJournal();
+                action = DisplayScreen();
+            }
+            else if (action == "5")
+            {
+                action = DisplayScreen();
+            }
+            else
+            {
+                Console.WriteLine("Not a valid action, please input a number 1-6.")
                 action = DisplayScreen();
             }
         }
