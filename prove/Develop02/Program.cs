@@ -14,7 +14,7 @@ class Program
         prompts.Add("How did I serve today?");
         prompts.Add("What was the hardest part of today?");
 
-        static void DisplayScreen()
+        static string DisplayScreen()
         {
             Console.WriteLine("Type the number to do the following action:");
             Console.WriteLine("1: Create a new entry");
@@ -23,9 +23,10 @@ class Program
             Console.WriteLine("4: Upload a Journal from a text file");
             Console.WriteLine("5: Extra credit item");
             Console.WriteLine("6: Quit (you will lose progress if not saved)");
-            string action = Console.ReadLine();
+            string screen = Console.ReadLine();
+            return screen;
         }
-        DisplayScreen();
+        action = DisplayScreen();
         Journal myJournal = new Journal();
 
         while (action != "6")
@@ -45,12 +46,12 @@ class Program
                 newEntry._answer = promptAnswer;
 
                 myJournal._entries.Add(newEntry);
-                DisplayScreen();
+                action = DisplayScreen();
             }
             else if (action == "2")
             {
                 myJournal.DisplayJournal();
-                DisplayScreen();
+                action = DisplayScreen();
             }
         }
     }
