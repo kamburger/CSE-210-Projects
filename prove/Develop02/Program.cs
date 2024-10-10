@@ -14,35 +14,45 @@ class Program
         prompts.Add("How did I serve today?");
         prompts.Add("What was the hardest part of today?");
 
+        static void DisplayScreen()
+        {
+            Console.WriteLine("Type the number to do the following action:");
+            Console.WriteLine("1: Create a new entry");
+            Console.WriteLine("2: Display your Journal Entries");
+            Console.WriteLine("3: Save your Journal to a text file");
+            Console.WriteLine("4: Upload a Journal from a text file");
+            Console.WriteLine("5: Extra credit item");
+            Console.WriteLine("6: Quit (you will lose progress if not saved)");
+            string action = Console.ReadLine();
+        }
+        DisplayScreen();
         Journal myJournal = new Journal();
 
-        Console.WriteLine("Type the number to do the following action:");
-        Console.WriteLine("1: Create a new entry");
-        Console.WriteLine("2: Display your Journal Entries");
-        Console.WriteLine("3: Save your Journal to a text file");
-        Console.WriteLine("4: Upload a Journal from a text file");
-        Console.WriteLine("5: Extra credit item");
-        string action = Console.ReadLine();
-        if (action == "1")
-        {
-            Entry newEntry = new Entry();
+        while (action != "6")
+        {    if (action == "1")
+            {
+                Entry newEntry = new Entry();
 
-            DateTime theCurrentTime = DateTime.Now;
-            string dateText = theCurrentTime.ToShortDateString();
-            newEntry._date = dateText;
+                DateTime theCurrentTime = DateTime.Now;
+                string dateText = theCurrentTime.ToShortDateString();
+                newEntry._date = dateText;
 
-            Random randomIndex = new Random();
-            int index = randomIndex.Next(prompts.Count());
-            newEntry._prompt = prompts[index];
-            Console.WriteLine($"{prompts[index]}");
-            string promptAnswer = Console.ReadLine();
-            newEntry._answer = promptAnswer;
+                Random randomIndex = new Random();
+                int index = randomIndex.Next(prompts.Count());
+                newEntry._prompt = prompts[index];
+                Console.WriteLine($"{prompts[index]}");
+                string promptAnswer = Console.ReadLine();
+                newEntry._answer = promptAnswer;
 
-            myJournal.Add(newEntry);
-        }
-        else if (action == "2")
-        {
-            myJournal.DisplayJournal();
+                myJournal._entries.Add(newEntry);
+                DisplayScreen();
+            }
+            else if (action == "2")
+            {
+                myJournal.DisplayJournal();
+                DisplayScreen();
+            }
         }
     }
+
 }
