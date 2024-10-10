@@ -26,7 +26,7 @@ class Program
             string screen = Console.ReadLine();
             return screen;
         }
-        action = DisplayScreen();
+        string action = DisplayScreen();
         Journal myJournal = new Journal();
 
         while (action != "6")
