@@ -16,8 +16,7 @@ class Program
             Console.WriteLine("2: Display your Journal Entries");
             Console.WriteLine("3: Save your Journal to a text file");
             Console.WriteLine("4: Upload a Journal from a text file");
-            Console.WriteLine("5: Extra credit item");
-            Console.WriteLine("6: Quit (you will lose progress if not saved)");
+            Console.WriteLine("5: Quit (you will lose progress if not saved)");
             string screen = Console.ReadLine();
             return screen;
         }
@@ -26,7 +25,7 @@ class Program
 
         string action = DisplayScreen();
 
-        while (action != "6")
+        while (action != "5")
         {    if (action == "1")
             {
                 Entry newEntry = new Entry();
@@ -61,13 +60,9 @@ class Program
                 myJournal.DisplayJournal();
                 action = DisplayScreen();
             }
-            else if (action == "5")
-            {
-                action = DisplayScreen();
-            }
             else
             {
-                Console.WriteLine("Not a valid action, please input a number 1-6.")
+                Console.WriteLine("Not a valid action, please input a number 1-6.");
                 action = DisplayScreen();
             }
         }
