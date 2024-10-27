@@ -13,6 +13,12 @@ public class Word
         _isRedacted = false;
     }
 
+    // 
+    public void DisplayWord()
+    {
+        Console.Write($"{_word } ");
+    }
+
     // Setter for _isRedacted: Only changes status to true, we will never need to change the _isRedacted from true to false
     public void ChangeRedactedStatus()
     {
@@ -35,14 +41,14 @@ public class Word
             {
                 if (char.IsLetter(c))
                 {
-                    redactedWord += "_"
+                    redactedWord += "_";
                 }
                 else
                 {
-                    redactedWord += "c"
+                    redactedWord += "c";
                 }
             }
-            _word = redactedWord
+            _word = redactedWord;
             ChangeRedactedStatus();
         }
     }

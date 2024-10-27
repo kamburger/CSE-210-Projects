@@ -45,13 +45,13 @@ public class Reference
     }
     public void DisplayReference()
     {
-        if _verseEnd == 0
+        if (_verseEnd == 0)
         {
-            Console.WriteLine($"{_book} {_chapter}: {_verseStart}");
+            Console.WriteLine($"{_book} {_chapter}:{_verseStart}");
         }
         else
         {
-            Console.WriteLine($"{_book} {_chapter}: {_verseStart}-{_verseEnd}");
+            Console.WriteLine($"{_book} {_chapter}:{_verseStart}-{_verseEnd}");
         }
     } 
 }

@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
+        Scripture defaultScripture = new Scripture();
+        defaultScripture.DisplayScripture();
+        Console.WriteLine("Press Enter to Hide a Word");
+        defaultScripture.RedactScripture();
     }
 }
