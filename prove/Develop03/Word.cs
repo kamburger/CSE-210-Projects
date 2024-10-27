@@ -45,7 +45,7 @@ public class Word
                 }
                 else
                 {
-                    redactedWord += "c";
+                    redactedWord += c;
                 }
             }
             _word = redactedWord;
