@@ -16,5 +16,13 @@ class Program
         string _problemsTest = mathtest.GetHomeworkList()[1];
         Console.WriteLine($"{_mathName} - {_mathTopic}");
         Console.WriteLine($"Section {_sectionTest}: Problems {_problemsTest}");
+
+        WritingAssignment writingtest = new WritingAssignment("Mary Waters", "European History", "The Causes of World War II");
+        string _writingName = writingtest.GetSummary()[0];
+        string _writingTopic = writingtest.GetSummary()[1];
+        string _writingtitle = writingtest.GetWritingInformation();
+        Console.WriteLine($"{_writingName} - {_writingTopic}");
+        Console.WriteLine($"{_writingtitle}");
     }
+
 }

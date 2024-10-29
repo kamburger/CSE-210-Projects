@@ -14,4 +14,8 @@ public class Assignment
         List<string> summary = new List<string>(){_studentName, _topic};
         return summary;
     }
+    public string GetStudentName()
+    {
+        return _studentName;
+    }
 }
