@@ -43,13 +43,10 @@ public class Activity
         Console.WriteLine($"Great Work!  Thank you for completing the {_activityName} activity!");
         Pause(3);
         Console.WriteLine();
-        Console.WriteLine($"Congradulations on completing {_duration} seconds of mindfullness!");
+        Console.WriteLine($"Congratulations on completing {_duration} seconds of mindfullness!");
         Pause(3);
         Console.WriteLine();
         Console.WriteLine("Come back soon!");
-        Pause(3);
-        Console.WriteLine();
-        Console.WriteLine("Goodbye!");
         Pause(5);
     }
 
@@ -59,9 +56,8 @@ public class Activity
     public void Pause(int _pauseTime)
     {
 
-        DateTime startTime = DateTime.Now; // current time to add time to
+        DateTime startTime = DateTime.Now; // current time to add time to, to create finish time
         DateTime futureTime = startTime.AddSeconds(_pauseTime); // time we want to stop the pause
-
         DateTime currentTime = DateTime.Now; // get current time, what  will change to evenually stop the loop
 
         while (currentTime < futureTime) //Until the current time passes the time we want to stop
@@ -86,21 +82,24 @@ public class Activity
     //Similar to pause but instead counts down my ones instead of an animation
     public void Countdown(int _countdownFrom)
     {
-        DateTime startTime = DateTime.Now;
+        DateTime startTime = DateTime.Now; // current time to add time to, to create finish time
         DateTime futureTime = startTime.AddSeconds(_countdownFrom);
-
         DateTime currentTime = DateTime.Now; // get current time, what  will change to evenually stop the loop
 
         while (currentTime < futureTime) //Until the current time passes the time we want to stop
         {                                   // print integer, integer-1,... every 1 second
+        
             Console.Write(_countdownFrom); // print integer
             Thread.Sleep(1000);         // sleep for one second in between integers
             Console.Write("\b \b");    // clear integer
+
             if (_countdownFrom >= 10) // Need an extra clear if counting down from 10 or more
             {
                 Console.Write("\b \b"); // Assumming someone will not countdown from a 3 digit integer
             }
+
             _countdownFrom = _countdownFrom - 1;  // minus one to integer for next print
+
             currentTime = DateTime.Now; // Check time to continue loop or stop
 
         }
