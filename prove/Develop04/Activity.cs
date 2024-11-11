@@ -96,6 +96,10 @@ public class Activity
             Console.Write(_countdownFrom); // print integer
             Thread.Sleep(1000);         // sleep for one second in between integers
             Console.Write("\b \b");    // clear integer
+            if (_countdownFrom >= 10) // Need an extra clear if counting down from 10 or more
+            {
+                Console.Write("\b \b"); // Assumming someone will not countdown from a 3 digit integer
+            }
             _countdownFrom = _countdownFrom - 1;  // minus one to integer for next print
             currentTime = DateTime.Now; // Check time to continue loop or stop
 
