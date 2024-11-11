@@ -9,7 +9,10 @@ class Program
      //   testActivity.Pause(5);
      //   testActivity.Countdown(5);
       //  testActivity.EndMessage();
-        BreathingActivity testBreathing = new BreathingActivity(60);
-        testBreathing.Breathe();
+      //  BreathingActivity testBreathing = new BreathingActivity(60);
+      //  testBreathing.Breathe();
+        ReflectionActivity testReflection = new ReflectionActivity(60);
+        testReflection.Reflect();
+
     }
 }
