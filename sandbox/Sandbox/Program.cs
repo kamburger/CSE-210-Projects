@@ -4,39 +4,68 @@ class Program
 {
     static void Main(string[] args)
     {
-        public class Employee
+        public abstract class SmartDevice
         {
             private string _name;
-            public virtual double CalculatePay()
-            {
-                return 0;
-            }
-        }
+            private bool _isOn = false;
+            private var _timeOn;
 
-        public class Salary : Employee
-        {
-            private double _salary()
-            public override double CalculatePay()
+            public SmartDevice(string name)
             {
-                return _salary/26
+                _name = name;
             }
-        }
-        public class Hourly : Employee
-        {
-            private double _hoursWorked;
-            private double _hourlyRate;
-            public override double CalculatePay()
+
+            public void TurnOn()
             {
-                return _hourlyRate*_hoursWorked
+                var _timeStart = DateTimeOffSet.UtcNow;
+                _isOn = true;
             }
-        }
-        public class Volunteer : Employee
-        {
-            
-        }
-
-
+            public void TurnOff()
+            {
+                var _timeEnd = DateTimeOffSet.UtcNow;
+                _timeOn = _timeEnd - _timeStart;
+                Console.WriteLine($"The {_name} was on for {_timeOn}.");
+                _isOn = false;
+            }
+            public void GetStatus()
+            {
+                if (!_isOn)
+                {
+                    Console.WriteLine($"The {_name} is currently off.");
+                }
+                else
+                {
+                    Console.WriteLine($"The {_name} is currently on.");
+                }
+            }
+            public void OnLength()
+            {
+                if (_isOn)
+                {
+                    var _timeNow = DateTimeOffSet.UtcNow;
+                    _timeOn = _timeNow - _timeStart;
+                    Console.WriteLine($"{_name} has been on for {_timeOn}.");
+                }
+                else
+                {
+                    Console.WriteLine($"{_name} is not on.");
+                }
+            }
+        } 
         
+        public class SmartTV : SmartDevice
+        {
+            public SmartTV(string name) : base(name)
+            {
+            }
+        }
+
+        SmartTV test = new SmartTV("Living Room TV");
+        test.TurnOn();
+       // Thread.Sleep(2000);
+        test.OnLength();
+        test.TurnOff();
+
     }
 }
 
