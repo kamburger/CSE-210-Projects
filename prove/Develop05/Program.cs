@@ -4,6 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+        ChecklistGoal testS = new ChecklistGoal("Call Doctor", "Call Doctor About Blood Test Results", 50, 2, 100);
+        testS.DisplayGoal();
+        testS.CompleteGoal();
+        testS.DisplayGoal();
+        testS.CompleteGoal();
+        testS.DisplayGoal();
+        testS.CompleteGoal();
+        testS.DisplayGoal();
+        int p = testS.GetPointsEarned();
+        Console.WriteLine(p);
     }
 }
