@@ -2,18 +2,22 @@ using System;
 
 public class EternalGoal : Goal
 {
-    private int _timesCompleted;
+    private int _timesCompleted; 
 
+    // Constructor for new EternalGoal, timescomplete = 0
     public EternalGoal(string name, string descript, int pointsworth) : base(name, descript, pointsworth, 2)
     {
         _timesCompleted = 0;
     }
 
+    // Constructor for loaded EternalGoal (added variable too set _timesCompleted)
     public EternalGoal(string name, string descript, int pointsworth, int times) : base(name, descript, pointsworth, 2)
     {
         _timesCompleted = times;
     }
 
+
+    // 
     public override void DisplayGoal()
     {
         string name = GetInfo()[0];

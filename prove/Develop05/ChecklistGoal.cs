@@ -2,7 +2,7 @@ using System;
 
 public class ChecklistGoal : Goal
 {
-    private int _allowedTimes;
+    private int _allowedTimes; 
     private int _finalPoints;
     private int _timesCompleted = 0;
 
