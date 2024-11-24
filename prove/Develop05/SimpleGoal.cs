@@ -2,10 +2,16 @@ using System;
 
 public class SimpleGoal : Goal
 {
-    private bool _isCompleted = false;
+    private bool _isCompleted;
 
-    public SimpleGoal(string name, string descript, int pointsworth) : base(name, descript, pointsworth)
+    public SimpleGoal(string name, string descript, int pointsworth) : base(name, descript, pointsworth, 1)
     {
+        _isCompleted = false;
+    }
+
+    public SimpleGoal(string name, string descript, int pointsworth, string t) : base(name, descript, pointsworth, 1)
+    {
+        _isCompleted = true;
     }
 
     public override void DisplayGoal()
@@ -15,11 +21,11 @@ public class SimpleGoal : Goal
 
         if (_isCompleted)
         {
-            Console.WriteLine($"[X] {name} ({descript})");
+            Console.Write($"[X] {name} ({descript})");
         }
         else
         {
-            Console.WriteLine($"[ ] {name} ({descript})");
+            Console.Write($"[ ] {name} ({descript})");
         }
     }
 
@@ -36,7 +42,7 @@ public class SimpleGoal : Goal
         {
             Console.WriteLine(" ERROR: This Goal has already been completed.");
         }
-        
-
     }
+
+
 }

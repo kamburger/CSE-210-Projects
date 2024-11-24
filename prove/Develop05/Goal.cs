@@ -6,12 +6,14 @@ public abstract class Goal
     private string _description;
     private int _pointsWorth;
     private int _pointsEarned = 0;
+    private int _goalType; 
 
-    public Goal(string name, string description, int pointsworth)
+    public Goal(string name, string description, int pointsworth, int type)
     {
         _name = name;
         _description = description;
         _pointsWorth = pointsworth;
+        _goalType = type;
     }
 
 
@@ -39,6 +41,11 @@ public abstract class Goal
         _pointsEarned = points;
     }
 
+    public int GetGoalType()
+    {
+        return _goalType;
+    }
+
 
     public virtual void DisplayGoal()
     {
@@ -49,4 +56,9 @@ public abstract class Goal
     {
     }
 
+
+    public virtual string SaveGoalFormat()
+    {
+        return $"1|{_name}|{_description}|{_pointsWorth}|{_pointsEarned}";
+    }
 }

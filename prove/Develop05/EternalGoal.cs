@@ -2,10 +2,16 @@ using System;
 
 public class EternalGoal : Goal
 {
-    private int _timesCompleted = 0;
+    private int _timesCompleted;
 
-    public EternalGoal(string name, string descript, int pointsworth) : base(name, descript, pointsworth)
+    public EternalGoal(string name, string descript, int pointsworth) : base(name, descript, pointsworth, 2)
     {
+        _timesCompleted = 0;
+    }
+
+    public EternalGoal(string name, string descript, int pointsworth, int times) : base(name, descript, pointsworth, 2)
+    {
+        _timesCompleted = times;
     }
 
     public override void DisplayGoal()
@@ -15,11 +21,11 @@ public class EternalGoal : Goal
 
         if (_timesCompleted == 0)
         {
-            Console.WriteLine($"[ ] {name} ({descript})");
+            Console.Write($"[ ] {name} ({descript})");
         }
         else
         {
-            Console.WriteLine($"[X] {name} ({descript}) ---Completed {_timesCompleted} times!");
+            Console.Write($"[X] {name} ({descript}) ---Completed {_timesCompleted} times!");
         }
     }
 
@@ -29,5 +35,14 @@ public class EternalGoal : Goal
         _timesCompleted += 1;
         int points = _timesCompleted*GetPointsWorth();
         SetPointsEarned(points);
+    }
+
+    public override string SaveGoalFormat()
+    {
+        string name = GetInfo()[0];
+        string description = GetInfo()[1];
+        int pointsWorth = GetPointsWorth();
+        int pointsEarned = GetPointsEarned();
+        return $"2|{name}|{description}|{pointsWorth}|{pointsEarned}|{_timesCompleted}";
     }
 }
