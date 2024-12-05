@@ -28,7 +28,7 @@ class Program
 
             if (_activityNumber == 1) // Executes Choice 1: 
             {
-               player.CreateGoal();
+                player.CreateGoal();
             }
             else if (_activityNumber == 2) // Executes Choice 2: 
             {

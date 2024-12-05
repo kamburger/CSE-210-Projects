@@ -5,7 +5,7 @@ public class User
 {
     private string _userName;
     private int _totalPoints = 0;
-    private List<Goal> _goals;
+    private List<Goal> _goals = new List<Goal>();
 
     public User(string name, List<Goal> goals)
     {
@@ -27,6 +27,7 @@ public class User
 
     public void ListGoals()
     {
+        Console.WriteLine("Your Goals Are: ")
         int n = 1;
         foreach (Goal g in _goals)
         {
