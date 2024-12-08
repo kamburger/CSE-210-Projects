@@ -13,5 +13,9 @@ class Program
         Address testA = new Address("9850 Silver Maple Rd", "Highlands Ranch", "CO", "USA");
         string a = testA.AddressString();
         Console.WriteLine(a);
+
+        Customer testC = new Customer("Kami", testA);
+        bool _usa = testC.GetUSA();
+        Console.WriteLine(_usa);
     }
 }
