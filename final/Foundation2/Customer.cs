@@ -11,6 +11,18 @@ public class Customer
         _address = address;
     }
 
+
+    public string GetName()
+    {
+        return _name;
+    }
+
+
+    public string GetAddressString()
+    {
+        return _address.AddressString();
+    }
+
     public bool GetUSA()
     {
         string _country = _address.GetCountry();
