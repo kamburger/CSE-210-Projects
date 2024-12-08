@@ -27,11 +27,11 @@ public class Video
 
     public void DiplayVideoInformation()
     {
-        int c = CountComments(); // Count comments to display how many there are
+        int n = CountComments(); // Count comments to display how many there are
         Console.WriteLine($"Video Title: {_title}"); // Display title
         Console.WriteLine($"Author: {_author}");  // Display author
         Console.WriteLine($"Length: {_length} minutes"); // Display length in minutes
-        Console.WriteLine($"Comments ({c}): "); // Comments section header amount of comments in parenthesis
+        Console.WriteLine($"Comments ({n}): "); // Comments section header amount of comments in parenthesis
         foreach (Comment c in _comments) // for each comment display the comment
         {
             c.DisplayComment();
