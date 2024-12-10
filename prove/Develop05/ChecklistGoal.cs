@@ -64,7 +64,7 @@ public class ChecklistGoal : Goal
         string description = GetInfo()[1];
         int pointsWorth = GetPointsWorth();
         int pointsEarned = GetPointsEarned();
-        return $"3|{name}|{description}|{pointsWorth}|{pointsEarned}|{_allowedTimes}|{_finalPoints}|{_timesCompleted}";
+        return $"{name}|{description}|{pointsWorth}|{pointsEarned}|{_allowedTimes}|{_finalPoints}|{_timesCompleted}";
     }
 
 }

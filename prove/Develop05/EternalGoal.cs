@@ -47,6 +47,6 @@ public class EternalGoal : Goal
         string description = GetInfo()[1];
         int pointsWorth = GetPointsWorth();
         int pointsEarned = GetPointsEarned();
-        return $"2|{name}|{description}|{pointsWorth}|{pointsEarned}|{_timesCompleted}";
+        return $"{name}|{description}|{pointsWorth}|{pointsEarned}|{_timesCompleted}";
     }
 }

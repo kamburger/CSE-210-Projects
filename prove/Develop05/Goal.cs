@@ -77,6 +77,6 @@ public abstract class Goal
     // Will not be overriden in SimpleGoal, why there is a 1 in the beginning for SimpleGoal type
     public virtual string SaveGoalFormat()
     {
-        return $"1|{_name}|{_description}|{_pointsWorth}|{_pointsEarned}";
+        return $"{_name}|{_description}|{_pointsWorth}|{_pointsEarned}";
     }
 }

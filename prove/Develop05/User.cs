@@ -27,7 +27,7 @@ public class User
 
     public void ListGoals()
     {
-        Console.WriteLine("Your Goals Are: ")
+        Console.WriteLine("Your Goals Are: ");
         int n = 1;
         foreach (Goal g in _goals)
         {
@@ -139,6 +139,7 @@ public class User
         {
             foreach (Goal g in _goals)
             {
+
                 string format = g.SaveGoalFormat();
                 outputFile.WriteLine($"{format}");
             }
@@ -157,16 +158,14 @@ public class User
             {
 
                 string[] parts = line.Split("|");
-                string t = parts[0];
-                int type = int.Parse(t);
-                string name = parts[1];
-                string description = parts[2];
-                string pw = parts[3];
+                string name = parts[0];
+                string description = parts[1];
+                string pw = parts[2];
                 int pointsworth = int.Parse(pw);
-                string pe = parts[4];
+                string pe = parts[3];
                 int pointsEarned = int.Parse(pe);
 
-                if (type == 1)
+                if (parts.Count() == 4)
                 {
                     if (pointsEarned > 0)
                     {
@@ -181,18 +180,18 @@ public class User
                         loadedGoals.Add(newGoal);
                     }
                 }
-                else if (type == 2)
+                else if (parts.Count() == 5)
                 {
-                    int timesDone = int.Parse(parts[5]);
+                    int timesDone = int.Parse(parts[4]);
                     EternalGoal newGoal = new EternalGoal(name, description, pointsworth, timesDone);
                     newGoal.SetPointsEarned(pointsEarned);
                     loadedGoals.Add(newGoal);
                 }
                 else 
                 {
-                    int allowedTimes = int.Parse(parts[5]);
-                    int finalPoints = int.Parse(parts[6]);
-                    int timesDone = int.Parse(parts[7]);
+                    int allowedTimes = int.Parse(parts[4]);
+                    int finalPoints = int.Parse(parts[5]);
+                    int timesDone = int.Parse(parts[6]);
                     ChecklistGoal newGoal = new ChecklistGoal(name, description, pointsworth, allowedTimes, finalPoints, timesDone);
                     newGoal.SetPointsEarned(pointsEarned);
                     loadedGoals.Add(newGoal);
