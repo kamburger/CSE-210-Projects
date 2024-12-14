@@ -34,7 +34,7 @@ class Program
         // Put Products in a List
         List<Product> _products2 = new List<Product>{_drpepper, _sweater, _pasta};
         // Create Address for second Customer
-        Address _addLani = new Address("1900 Sand Castle St", "Toronta", "Ontario", "Canada");
+        Address _addLani = new Address("1900 Sand Castle St", "Toronto", "Ontario", "Canada");
         // Create second Customer 
         Customer _lani = new Customer("Lani", _addLani);
         // Create Order with second Customer and Product List
