@@ -2,11 +2,15 @@ using System;
 
 public class Event
 {
+    // Attributes of Events they all share: title, description, date and time, and address
     private string _title;
     private string _description;
     private string _date;
     private string _time;
     private Address _address;
+
+
+    // Constructor to create Event takes in all attributes and sets them
     public Event(string _t, string _descript, string _d, string _tim, Address _addy)
     {
         _title = _t;
@@ -15,6 +19,9 @@ public class Event
         _time = _tim;
         _address = _addy;
     }
+    
+
+    // Standard Message displays all shared attributes for events
     public void StandardMessage()
     {
         Console.WriteLine(_title);
@@ -23,14 +30,20 @@ public class Event
         string _a = _address.AddressString();
         Console.WriteLine(_a);
     }
+
+
+    // Will be overriden in kid classes to include extra details specific to that kid
     public virtual void FullDetails()
     {
-        
+        StandardMessage();
     }        
     
-    public void ShortMessage()
+
+    // Only displays the title of the event and date
+    public virtual void ShortMessage()
     {
         Console.WriteLine($"{_title}");
-        Console.WriteLine($"event type  - {_date}");
+        Console.WriteLine($"{_date}");
     }
+
 }
