@@ -42,7 +42,9 @@ public class Event
     // Only displays the title of the event and date
     public virtual void ShortMessage()
     {
+        Type _type = GetType();
         Console.WriteLine($"{_title}");
+        Console.WriteLine($"Join us for a/an {_type.Name}!");
         Console.WriteLine($"{_date}");
     }
 
